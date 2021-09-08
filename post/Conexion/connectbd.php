@@ -1,35 +1,36 @@
 <?php
- 
-class DB_Connect {
- 
+
+class DB_Connect
+{
+
     // constructor
-    function __construct() {
- 
+    function __construct()
+    {
     }
- 
+
     // destructor
-    function __destruct() {
+    function __destruct()
+    {
         // $this->close();
     }
- 
+
     // Connecting to database
-    public function connect() {
+    public function connect()
+    {
         require_once '../modelo/Conexion/config.php';
         // connecting to mysql
-		$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+        $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
         // selecting database
-		
-        mysqli_select_db($con,DB_DATABASE);
- 
+
+        mysqli_select_db($con, DB_DATABASE);
+
         // return database handler
         return $con;
     }
- 
+
     // Closing database connection
-    public function close() {
+    public function close()
+    {
         mysql_close();
     }
- 
 }
- 
-?>
